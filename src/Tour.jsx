@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Tour = () => {
+const Tour = ({ id, name, info, image, price }) => {
   return (
-    <div>
-      <h2>Tour</h2>
-    </div>
+    <article className='single-tour'>
+      <img src={image} alt={name} className='img' />
+      <span className='tour-price'>${price}</span>
+    </article>
   );
 };
 
