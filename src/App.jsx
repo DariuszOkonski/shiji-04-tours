@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import Loading from './Loading';
 import Tours from './Tours';
+import data from './db.json';
 
-// const url = 'https://course-api.com/react-tours-project';
-const localUrl = 'http://localhost:3000/tours';
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [tours, setTours] = useState([]);
@@ -16,8 +15,7 @@ const App = () => {
   const fetchTours = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(localUrl);
-      const tours = await response.json();
+      const tours = data.tours;
       setTours(tours);
     } catch (error) {
       console.log(error);
